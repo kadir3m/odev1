@@ -1,0 +1,33 @@
+<div class="container">
+<button class="btn btn-primary" (click)="goToNew()">Yeni Ekle</button>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Ürün Adı</th>
+        <th scope="col">Fiyatı</th>
+        <th scope="col">Kategori</th>
+        <th scope="col">Satışta</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of products">
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.name}}</td>
+        <td>{{item.price}}</td>
+        <td>{{item.category}}</td>
+        <td>{{item.is_sale ? 'Evet' : 'Hayır'}}</td>
+        <td>
+          <button class="btn btn-primary" (click)="editProduct(item)">Güncelle</button>
+          <button class="btn btn-warning ml-1" (click)="viewProduct(item)">İncele</button>
+          <button class="btn btn-danger ml-1" (click)="delete(item)">Sil</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-6"></div>
+</div>
+</div>
